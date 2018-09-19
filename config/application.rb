@@ -21,4 +21,6 @@ module PoemicApp
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { :api_token => "112311b7-1768-47c3-8494-91cb215f141c" }
 end
