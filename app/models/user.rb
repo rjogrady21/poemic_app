@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
+
+  def send_daily_poem
+    UserMailer.daily_poem.deliver_now
+  end
 end

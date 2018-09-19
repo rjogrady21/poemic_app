@@ -17,8 +17,11 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.daily_poem.subject
   #
   def daily_poem
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+    @users = User.all
+    @users.each do |user|
+      @user = user
+      @poem = Poem.all.sample
+      mail(to: user.email, subject: 'This is your daily poem')
+    end
   end
 end
