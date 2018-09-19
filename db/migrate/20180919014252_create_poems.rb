@@ -8,8 +8,8 @@ class CreatePoems < ActiveRecord::Migration[5.2]
       t.string :poet
       t.string :period
       t.string :year
-      t.array :body
-      t.array :keywords
+      t.string :body, array: true
+      t.string :keywords, array: true
 
       t.timestamps
     end
