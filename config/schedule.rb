@@ -14,8 +14,9 @@ set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log
 #   rake "some:great:rake:task"
 # end
 #
+
 every 1.minute do
-  UserMailer.daily_poem.deliver_now
+  runner "User.send_daily_poem"
 end
 
 # Learn more: http://github.com/javan/whenever
