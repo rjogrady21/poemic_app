@@ -1,5 +1,8 @@
-<p>Hi there</p>
+<p>Hi @user.email</p>
 
-<p>Today we'll talk about SMTP and Postmark!</p>
+<p>Here is your poem</p>
+<% @poem.body.each do |line| %>
+<p><%= line %></p>
+<% end %>
 
 <p>See ya!</p>
