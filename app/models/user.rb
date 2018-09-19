@@ -12,6 +12,6 @@ class User < ApplicationRecord
   end
 
   def send_daily_poem
-    UserMailer.daily_poem(self).deliver_now
+    UserMailer.daily_poem.deliver_now
   end
 end
