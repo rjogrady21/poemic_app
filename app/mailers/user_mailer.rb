@@ -7,9 +7,8 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
     @user = user
-
-    mail(to: @user.email, subject: 'Welcome to Poemic')
     @poem = Poem.all.sample
+    mail(to: @user.email, subject: 'Welcome to Poemic')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
