@@ -1,5 +1,12 @@
-<h1>User#daily_poem</h1>
+<p>Hi <%= @user.email %></p>
 
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/daily_poem.html.erb
-</p>
+<p>Here is your poem</p>
+<h1> <%= @poem.title %></h1>
+<% @poem.body.each do |line| %>
+  <p><%= line %></p>
+<% end %>
+<p><strong><%= @poem.poet %></strong></p>
+<br>
+<a href="<%= @poem.reference %>">Read the poem on Poetry Foundation</a>
+
+<p>See ya!</p>

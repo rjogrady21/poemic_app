@@ -17,8 +17,8 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.daily_poem.subject
   #
   def daily_poem
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+    @user = user
+    @poem = Poem.all.sample
+    mail(to: @user.email, subject: 'Welcome to Poemic')
   end
 end
