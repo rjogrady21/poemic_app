@@ -14,8 +14,8 @@ set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log
 # end
 #
 
-every 1.minute do
-  runner "User.send_daily_poem"
+every 3.minutes do
+  runner "UserMailer.daily_poem"
 end
 
 # Learn more: http://github.com/javan/whenever
