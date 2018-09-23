@@ -19,9 +19,8 @@ class UserMailer < ApplicationMailer
 
   def daily_poem
     User.find_each do |user|
-      @user = user
       @poem = Poem.all.sample
-      mail(to: @user.email, subject: 'Your daily poem')
+      mail(to: user.email, subject: 'Your daily poem')
     end
   end
 
