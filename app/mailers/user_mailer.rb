@@ -20,13 +20,18 @@ class UserMailer < ApplicationMailer
   def daily_poem(user)
     @user = user
     @poem = Poem.all.sample
+    puts "sending email to user #{user.id}"
     mail(to: @user.email, subject: 'Your daily poem')
+    puts "sending email to user #{user.id}"
   end
 
   def send_daily_poem
+    puts "I am inside daily poem"
     User.all.each do |user|
+      puts "This is user #{user.id}"
       daily_poem(user).deliver_now
     end
+    puts "sent to all users"
   end
 
 end
