@@ -4,14 +4,14 @@
 # http://en.wikipedia.org/wiki/Cron
 
 # Example:
-require 'whenever'
-set :environment, :production
-set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
-#
+# require 'whenever'
+# set :environment, :production
+# set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
+# #
 
 
-every 2.minutes do
-  runner "User.send_daily_poem"
-end
+# every 2.minutes do
+#   runner "User.send_daily_poem"
+# end
 
 # Learn more: http://github.com/javan/whenever
