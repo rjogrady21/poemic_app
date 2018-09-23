@@ -8,15 +8,10 @@ require 'whenever'
 set :environment, "production"
 set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
 #
-# every 2.hours do
-#   command "/usr/bin/some_great_command"
-#   runner "MyModel.some_method"
-#   rake "some:great:rake:task"
-# end
-#
+
 
 every 2.minutes do
-  runner "UserMailer.daily_poem"
+  runner "User.send_daily_poem"
 end
 
 # Learn more: http://github.com/javan/whenever
