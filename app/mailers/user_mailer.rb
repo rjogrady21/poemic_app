@@ -25,7 +25,7 @@ class UserMailer < ApplicationMailer
 
   def send_daily_poem
     User.all.each do |user|
-      self.daily_poem(user).deliver_now
+      daily_poem(user).deliver_now
     end
   end
 
