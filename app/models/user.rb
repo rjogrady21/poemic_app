@@ -8,7 +8,7 @@ class User < ApplicationRecord
   private
 
   def send_daily_poem
-    self.all.each do |user|
+    User.connection.all.each do |user|
       UserMailer.daily_poem(user).deliver_now
     end
   end
