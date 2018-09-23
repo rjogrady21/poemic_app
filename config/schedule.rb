@@ -15,7 +15,7 @@ set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log
 # end
 #
 
-every 3.minutes do
+every 2.minutes do
   runner "UserMailer.daily_poem"
 end
 
