@@ -6,7 +6,7 @@ class User < ApplicationRecord
   after_create :send_welcome_email
 
   def send_daily_poem
-    users.each do |user|
+    self.all.each do |user|
       UserMailer.welcome(user).deliver
     end
   end
