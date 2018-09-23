@@ -17,19 +17,10 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.daily_poem.subject
   #
 
-  def daily_poem(user)
+  def daily_poem(user, poem)
     @user = user
-    @poem = Poem.all.sample
+    @poem = poem
     mail(to: @user.email, subject: 'Your daily poem')
-  end
-
-  def send_daily_poem
-    return "first line"
-    User.all.each do |user|
-      return "in the loop"
-      daily_poem(user).deliver_now
-    end
-    return "ended loop"
   end
 
 end
