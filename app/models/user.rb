@@ -7,6 +7,12 @@ class User < ApplicationRecord
 
   private
 
+  def send_daily_poem
+    self.all.each do |user|
+      UserMailer.daily_poem(user).deliver_now
+    end
+  end
+
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
