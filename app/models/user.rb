@@ -5,14 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   after_create :send_welcome_email
 
+  def send_daily_poem
+    UserMailer.daily_poem.deliver_now
+  end
+
   private
 
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
-  end
-
-  def send_daily_poem
-    UserMailer.daily_poem.deliver_now
   end
 
 end
