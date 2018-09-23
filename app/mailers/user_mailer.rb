@@ -23,4 +23,12 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Your daily poem')
   end
 
+  private
+
+  def send_daily_poem
+    User.all.each do |user|
+      self.daily_poem(user).deliver_now
+    end
+  end
+
 end

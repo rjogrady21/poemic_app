@@ -5,12 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   after_create :send_welcome_email
 
-  def send_daily_poem
-    User.all.each do |user|
-      YourMailer.daily_poem(user).deliver_now
-    end
-  end
-
   private
 
   def send_welcome_email
