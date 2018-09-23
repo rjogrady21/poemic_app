@@ -17,7 +17,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'postmark-rails'
-gem 'whenever', require: false
 
 group :development do
   gem 'web-console', '>= 3.3.0'
