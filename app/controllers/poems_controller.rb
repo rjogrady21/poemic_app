@@ -1,5 +1,5 @@
 class PoemsController < ApplicationController
-    def send_daily_poem
+    def self.send_daily_poem
       @users = User.all
       @poem = Poem.all.sample
       @users.each do |user|
