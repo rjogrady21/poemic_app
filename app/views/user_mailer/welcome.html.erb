@@ -8,5 +8,6 @@
 <p><strong><%= @poem.poet %></strong></p>
 <br>
 <a href="<%= @poem.reference %>">Read the poem on Poetry Foundation</a>
+<%= link_to "Read the poem on Poemic", poem_path(@poem) %>
 
 <p>See ya!</p>
